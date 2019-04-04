@@ -66,39 +66,117 @@ public Controle extends TV
 public void aumentaVolume(){
    if(this.ligada = true){
         if(this.volume<this.maxvolume){
-            this.volume++;
+           this.volume++;
+           System.out.println("volume:"+this.volume);
         }
         else 
-           System.out.println("volume está no máximo");
+          System.out.println("volume está no máximo");
         }
         else 
-           System.out.println("TV precisa estar ligada");
+          System.out.println("TV precisa estar ligada");
 
 public void diminuiVolume(){
    if(this.ligada = true){
       if(this.volume>0){
              this.volume--;
-        }
+             System.out.println("volume:"+this.volume);
+             }
       else 
-         System.out.println("volume está mudo");
+             System.out.println("volume está mudo");
 }
     else 
-      System.out.println("TV precisa estar ligada");
+            System.out.println("TV precisa estar ligada");
 
 public void aumentaCanal(){
-   if(this.ligada = true){
+      if(this.ligada = true){
+      if(this.canal<this.maxcanal){
+           if(this.canal<this.maxcanal){
+               this.canal++;
+               System.out.println("canal:"+this.canal);
+            else 
+               System.out.println("está no ultimo canal");
+}
+            else 
+               System.out.println("TV precisa estar ligada");
+     }
+}
+public void diminuiCanal(){
+      if(this.ligada = true){
       if(this.canal<this.maxcanal){
            if(this.volume>0){
                this.volume--;
-           
-      else 
-           System.out.println("volume está mudo");
+                  System.out.println("canal:\n"+this.canal);
+            else 
+                  System.out.println("volume está mudo");
 }
-    else 
-      System.out.println("TV precisa estar ligada");
+            else 
+                  System.out.println("TV precisa estar ligada");
      }
 }
+   
+public void ligarTv(){
+   if(this.ligada = false){
+      this.ligada = true;
+   }
+   else 
+    System.out.println("TV ja está ligada");  
+   
+   
+public void desligarTv(){
+    if(this.ligada = true){
+       this.ligada = false;
+    }
+    else 
+      System.out.println("TV ja está desligada");  
+   
+   
+public void menu() { // menu principal
+		int opcao = 0;
+		do {
+	
+			System.out.println("                  |     1 - Aumenta canal         |");
+			System.out.println("                  |     2 - Diminui canal      |");
+			System.out.println("                  |     3 - Aumenta Volume      |");
+			System.out.println("                  |     4 - Diminui Volume   |");
+			System.out.println("                  |     5 - Ligar TV      |");
+			System.out.println("                  |     6 - Desligar TV |");
+			System.out.println("                  |     0 - Sair          |");
+			System.out.println("                  =========================\n");			
+			Scanner scan = new Scanner(System.in);
+                       opcao = Integer.parseInt(scan.nextLine());
+			switch (opcao) {
+			               case 1:
+                                 aumentaCanal();
+				                     break;
+		                  case 2:
+				                    diminuiCanal();
+				                     break;
 
+                        case 3:
+                                 aumentaVolume();
+                                 break;
+                          
+                        case 4:
+                                  diminuiVolume();
+                                  break;
+
+			               case 5:
+				                    ligarTv();
+				                     break;
+
+                        case 6: 
+                                desligarTv();
+                                break;
+                        
+			               case 0:
+				            break;
+
+		         default:
+				System.out.println("Opção Inválida!");
+				break;
+			}
+		} while (opcao != 0);
+	}
 
 
 
