@@ -93,6 +93,7 @@ public void aumentaCanal(){
            if(this.canal<this.maxcanal){
                this.canal++;
                System.out.println("canal:"+this.canal);
+	   }	
             else 
                System.out.println("está no ultimo canal");
 }
@@ -106,6 +107,7 @@ public void diminuiCanal(){
            if(this.volume>0){
                this.volume--;
                   System.out.println("canal:\n"+this.canal);
+	   }
             else 
                   System.out.println("volume está mudo");
 }
@@ -133,7 +135,7 @@ public void desligarTv(){
 public void menu() { // menu principal
 		int opcao = 0;
 		do {
-	
+	                System.out.println("                  |          CONTROLE        |");
 			System.out.println("                  |     1 - Aumenta canal         |");
 			System.out.println("                  |     2 - Diminui canal      |");
 			System.out.println("                  |     3 - Aumenta Volume      |");
